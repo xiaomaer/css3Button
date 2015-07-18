@@ -4,9 +4,6 @@
 }*/
 
 .btn {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	text-decoration: none;
 	display: inline-block;
 	/*设置为行内块级元素，<a>的宽度的由其内容决定；设置为block时，其宽度为父级元素宽度*/
