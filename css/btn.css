@@ -1,0 +1,167 @@
+/** {
+	margin: 0px;
+	padding: 0px;
+}*/
+
+.btn {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	text-decoration: none;
+	display: inline-block;
+	/*设置为行内块级元素，<a>的宽度的由其内容决定；设置为block时，其宽度为父级元素宽度*/
+	
+	overflow: hidden;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-shadow: 2px 2px 1px #888;
+	/*规定水平阴影、垂直阴影、模糊距离，以及阴影的颜色*/
+}
+span.icon,
+span.title {
+	position: relative;
+	display: block;
+	/*必须加这一行，不然为行内元素，设置宽高没有用*/
+	/*height: 50px;*/
+	/*把span设置为block,高度相对于其父级元素*/
+	
+	padding: 0 30px;
+}
+span.left {
+	float: left;
+	border-radius: 5px 0px 0px 5px;
+	/*左上，右上，右下，左下*/
+	
+	-moz-border-radius: 5px 0 0 5px;
+	-webkit-border-radius: 5px 0 0 5px;
+}
+span.right {
+	float: right;
+	border-radius: 0px 5px 5px 0px;
+	-moz-border-radius: 0px 5px 5px 0px;
+	-webkit-border-radius: 0px 5px 5px 0px;
+}
+span.icon {
+	background-color: #007261;
+	/*	-webkit-box-shadow: 0 5px 0 #007261;
+	box-shadow: 0 5px 0 #007261;*/
+	/*规定水平阴影、垂直阴影、模糊距离，阴影的大小，以及阴影的颜色*/
+}
+span.title {
+	background-color: #00ae94;
+	/*box-shadow: 0 5px 0 #00ae94;
+	-webkit-box-shadow: 0 5px 0 #00ae94;*/
+}
+/*以下类型共有的属性*/
+span.line,span.arrow-left,span.arrow-right,span.backslash,span.slash{
+	position: absolute;
+	width: 0;
+	height: 0;
+	/*过渡*/
+	
+	transition: all .15s;
+	-webkit-transition: all .15s;
+	-moz-transition: all .15s;
+	-ms-transition: all .15s;
+	transition-property: left, right;
+	-webkit-transition-property: left, right;
+	-moz-transition-property: left, right;
+	-moz-transition-property: left, right;
+	-ms-transition-property: left, right;
+	
+}
+
+/*直线左移动*/
+
+span.line {
+	height: 50px;
+	right: 0px;
+	/*左右过渡*/
+	
+	/*移动边框直线*/
+	border-right: 10px solid #00ae94;
+	/*注意border的宽度要与box-shadow的水平阴影宽度致，并且都要和左（右）移动的距离相同，
+	 * 不然阴影和右边框中间有间隙*/
+	
+	-webkit-box-shadow: 10px 0 0 #00ae94;
+	box-shadow: 10px 0 0 #00ae94;
+	/*规定水平阴影、垂直阴影、模糊距离，阴影的大小，以及阴影的颜色*/
+}
+/*左箭头左移动*/
+
+.btn span.arrow-left {
+	right: 0;
+	/*阴影*/
+	
+	-webkit-box-shadow: 10px 0 0 #00ae94;
+	box-shadow: 10px 0 0 #00ae94;
+	/*左箭头*/
+	
+	border-right: 10px solid #00ae94;
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+}
+/*右箭头右移*/
+
+.btn span.arrow-right {	
+	left: 0;
+
+	/*右箭头*/
+	
+	border-left: 10px solid #007261;
+	border-top: 25px solid transparent;
+	border-bottom: 25px solid transparent;
+	/*阴影，消除移动颜色色差*/
+	
+	box-shadow: -10px 0px 0px #007261;
+	-webkit-box-shadow: -10px 0 0 #007261;
+}
+/*反斜杠*/
+.btn span.backslash{
+	left: 0;
+	/*反斜杠*/
+	
+	border-left: 10px solid #007261;
+	border-top: 0px solid transparent;
+	border-bottom: 50px solid transparent;
+	/*阴影，消除移动颜色色差*/
+	
+	box-shadow: -10px 0px 0px #007261;
+	-webkit-box-shadow: -10px 0 0 #007261;
+	
+}
+/*正斜杠*/
+.btn span.slash{
+	right: 0;
+	/*正斜杠*/
+	
+	border-right: 10px solid #00AE94;
+	border-top: 0px solid transparent;
+	border-bottom: 50px solid transparent;
+	/*阴影，消除移动颜色色差*/
+	
+	box-shadow: 10px 0px 0px #00AE94;
+	-webkit-box-shadow: 10px 0 0 #00AE94;
+	
+}
+.btn:hover span.line {
+	right: 10px;
+}
+.btn:hover span.arrow-left {
+	right: 10px;
+}
+.btn:hover span.arrow-right {
+	left: 10px;
+}
+.btn:hover span.backslash{
+	left: 10px;
+}
+.btn:hover span.slash{
+	right: 10px;
+}
